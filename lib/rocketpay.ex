@@ -1,6 +1,6 @@
-defmodule Rocketpay do
+defmodule RocketPay do
   @moduledoc """
-  Rocketpay keeps the contexts that define your domain
+  RocketPay keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

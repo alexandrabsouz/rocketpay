@@ -1,4 +1,4 @@
-defmodule Rocketpay.MixProject do
+defmodule RocketPay.MixProject do
   use Mix.Project
 
   def project do
@@ -7,7 +7,7 @@ defmodule Rocketpay.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -19,7 +19,7 @@ defmodule Rocketpay.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Rocketpay.Application, []},
+      mod: {RocketPay.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

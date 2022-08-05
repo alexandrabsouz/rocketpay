@@ -1,5 +1,5 @@
-defmodule RocketpayWeb.ErrorView do
-  use RocketpayWeb, :view
+defmodule RocketPayWeb.ErrorView do
+  use RocketPayWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

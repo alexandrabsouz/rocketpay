@@ -8,13 +8,13 @@
 import Config
 
 config :rocketpay,
-  ecto_repos: [Rocketpay.Repo]
+  ecto_repos: [RocketPay.Repo]
 
 # Configures the endpoint
-config :rocketpay, RocketpayWeb.Endpoint,
+config :rocketpay, RocketPayWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: RocketpayWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Rocketpay.PubSub,
+  render_errors: [view: RocketPayWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: RocketPay.PubSub,
   live_view: [signing_salt: "vEiEVvZC"]
 
 # Configures the mailer
@@ -24,7 +24,7 @@ config :rocketpay, RocketpayWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :rocketpay, Rocketpay.Mailer, adapter: Swoosh.Adapters.Local
+config :rocketpay, RocketPay.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

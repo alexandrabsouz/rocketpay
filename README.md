@@ -1,4 +1,4 @@
-# Rocketpay
+# RocketPay
 
 To start your Phoenix server:
 

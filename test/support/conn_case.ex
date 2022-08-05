@@ -1,4 +1,4 @@
-defmodule RocketpayWeb.ConnCase do
+defmodule RocketPayWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule RocketpayWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use RocketpayWeb.ConnCase, async: true`, although
+  by setting `use RocketPayWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,17 +22,17 @@ defmodule RocketpayWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import RocketpayWeb.ConnCase
+      import RocketPayWeb.ConnCase
 
-      alias RocketpayWeb.Router.Helpers, as: Routes
+      alias RocketPayWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint RocketpayWeb.Endpoint
+      @endpoint RocketPayWeb.Endpoint
     end
   end
 
   setup tags do
-    Rocketpay.DataCase.setup_sandbox(tags)
+    RocketPay.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

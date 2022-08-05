@@ -1,4 +1,4 @@
-defmodule RocketpayWeb.Telemetry do
+defmodule RocketPayWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -65,7 +65,7 @@ defmodule RocketpayWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {RocketpayWeb, :count_users, []}
+      # {RocketPayWeb, :count_users, []}
     ]
   end
 end

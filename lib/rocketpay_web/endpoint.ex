@@ -1,4 +1,4 @@
-defmodule RocketpayWeb.Endpoint do
+defmodule RocketPayWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :rocketpay
 
   # The session will be stored in the cookie and signed,
@@ -44,5 +44,5 @@ defmodule RocketpayWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug RocketpayWeb.Router
+  plug RocketPayWeb.Router
 end

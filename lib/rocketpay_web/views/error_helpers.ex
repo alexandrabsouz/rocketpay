@@ -1,4 +1,4 @@
-defmodule RocketpayWeb.ErrorHelpers do
+defmodule RocketPayWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -25,9 +25,9 @@ defmodule RocketpayWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(RocketpayWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(RocketPayWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(RocketpayWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(RocketPayWeb.Gettext, "errors", msg, opts)
     end
   end
 end
