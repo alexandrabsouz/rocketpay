@@ -10,7 +10,7 @@ defmodule RocketPay.Numbers do
     result =
       string
       |> String.split(",")
-      |> Enum.map(fn num -> String.to_integer(num) end)
+      |> Stream.map(fn num -> String.to_integer(num) end)
       |> Enum.sum()
       |> Integer.to_string()
 
