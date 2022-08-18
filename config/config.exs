@@ -17,6 +17,10 @@ config :rocketpay, RocketPayWeb.Endpoint,
   pubsub_server: RocketPay.PubSub,
   live_view: [signing_salt: "vEiEVvZC"]
 
+config :rocketpay, RocketPay.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
