@@ -3,13 +3,16 @@ defmodule RocketPay.User do
 
   import Ecto.Changeset
 
+  alias Ecto.Changeset
+
   @primary_key {:id, :binary_id, autogenerate: true}
-  @required_params [:name, :age, :email, :password_hash, :username]
+  @required_params [:name, :age, :email, :password, :username]
 
   schema "users" do
     field :name, :string
     field :age, :integer
     field :email, :string
+    field :password, :string, virtual: true
     field :password_hash, :string
     field :username, :string
 
@@ -20,11 +23,18 @@ defmodule RocketPay.User do
     %__MODULE__{}
     |> cast(params, @required_params)
     |> validate_required(@required_params)
-    |> validate_length(:password_hash, min: 6)
+    |> validate_length(:password, min: 6)
     |> validate_number(:age, greater_than_or_equal_to: 18)
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
     |> unique_constraint(:username)
     |> validate_length(:username, min: 5)
+    |> put_password_hash()
   end
+
+  defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    change(changeset, Bcrypt.add_hash(password))
+  end
+
+  defp put_password_hash(changeset), do: changeset
 end
