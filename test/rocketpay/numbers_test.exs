@@ -4,7 +4,7 @@ defmodule RocketPay.NumbersTest do
   alias RocketPay.Numbers
 
   describe "sum_from_file/1" do
-    test "when filename is valid, returns the sum of values" do
+    test "when there is filename exists, returns the sum of values" do
       response = Numbers.sum_from_file("numbers")
       expected_response = {:ok, %{result: "38"}}
 
