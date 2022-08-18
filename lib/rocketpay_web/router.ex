@@ -23,14 +23,6 @@ defmodule RocketPayWeb.Router do
     end
   end
 
-
-
-
-
-
-
-
-
   if Mix.env() == :dev do
     scope "/dev" do
       pipe_through [:fetch_session, :protect_from_forgery]
