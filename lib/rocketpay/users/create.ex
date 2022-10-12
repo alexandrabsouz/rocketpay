@@ -1,4 +1,6 @@
 defmodule RocketPay.Users.Create do
+  @moduledoc false
+  
   alias RocketPay.{Repo, User}
 
 
